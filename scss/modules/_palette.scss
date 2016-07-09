@@ -1,0 +1,86 @@
+$grapefruit: (
+  "light": #ED5565,
+  "dark": #DA4453
+  );
+
+$bittersweet: (
+  "light": #FC6E51,
+  "dark": #E9573F
+  );
+
+$sunflower: (
+  "light": #FFCE54,
+  "dark": #F6BB42
+  );
+
+$grass: (
+  "light": #A0D468,
+  "dark": #8CC152
+  );
+
+$mint: (
+  "light": #48CFAD,
+  "dark": #37BC9B
+  );
+
+$aqua: (
+  "light": #4FC1E9,
+  "dark": #3BAFDA
+  );
+
+$bluejeans: (
+  "light": #5D9CEC,
+  "dark": #4A89DC
+  );
+
+$lavander: (
+  "light": #AC92EC,
+  "dark": #967ADC
+  );
+
+$pinkrose: (
+  "light": #EC87C0,
+  "dark": #D770AD
+  );
+
+$lightgray: (
+  "light": #F5F7FA,
+  "dark": #E6E9ED
+  );
+
+$mediumgray: (
+  "light": #CCD1D9,
+  "dark": #AAB2BD
+  );
+
+$darkgray: (
+  "light": #656D78,
+  "dark": #434A54
+  );
+
+$flattastic: (
+  "grapefruit": $grapefruit,
+  "bittersweet": $bittersweet,
+  "sunflower": $sunflower,
+  "grass": $grass,
+  "mint": $mint,
+  "aqua": $aqua,
+  "bluejeans": $bluejeans,
+  "lavander": $lavander,
+  "pinkrose": $pinkrose,
+  "lightgray": $lightgray,
+  "mediumgray": $mediumgray,
+  "darkgray": $darkgray
+);
+
+@each $colorName, $color in $flattastic {
+  @each $colorType, $colorValue in $color {
+    .#{$colorName}.#{$colorType} {
+      background-color: $colorValue !important;
+    }
+
+    .#{$colorName}-text.#{$colorType}-text {
+      color: $colorValue !important;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@mixin mixCreateColumns($columns) {
+  @for $i from 1 through $columns {
+    .col-#{$i}-#{$columns} {
+      width: percentage(1 * $i / $columns);
+    }
+  }
+}
