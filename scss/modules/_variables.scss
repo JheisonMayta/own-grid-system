@@ -1,8 +1,8 @@
 
 // Grid Variables
 
-// $minPageWidth: {pixels};
-// $maxWidth: {pixels};
-// $marginWidth: {pixels};
-// $columns: {integer};
-// $gutterWidth: {pixels};
+$minPageWidth: 320px !default;
+$maxWidth: 960px !default;
+$marginWidth: 20px !default;
+$columns: 12 !default;
+$gutterWidth: 20px !default;

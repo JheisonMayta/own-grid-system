@@ -1,17 +1,9 @@
-
-$minPageWidth: 320px !default;
-$maxWidth: 960px !default;
-$marginWidth: 20px !default;
-$columns: 12 !default;
-$gutterWidth: 20px !default;
 $columnWidth: floor(($maxWidth - ($columns - 1) * $gutterWidth - $marginWidth * 2) / $columns);
 $pageWidth: ($columns - 1) * $gutterWidth + $columns * $columnWidth + $marginWidth * 2;
 
 
 // Grid context
 .grid {
-  min-width: $minPageWidth;
-
   // Clearing Context
   &:after {
     content: "";
@@ -23,7 +15,7 @@ $pageWidth: ($columns - 1) * $gutterWidth + $columns * $columnWidth + $marginWid
 // Columns
 @include mixCreateColumns(12); // mixin
 
-[class*='col-'] {
+[class*='col'] {
   float: left;
   padding-right: $gutterWidth;
 
@@ -45,11 +37,25 @@ $pageWidth: ($columns - 1) * $gutterWidth + $columns * $columnWidth + $marginWid
   margin: 0 auto;
   max-width: $maxWidth;
 
-  & > [class*='col-']:last-of-type {
+  & > [class*='col']:last-of-type {
     padding-right: $marginWidth;
   }
 }
 
 .module {
   width: 100%;
+}
+
+
+// Media Queries
+@media screen and (min-width: 320px){
+  @include mixCreateColumns(12, "s"); // mixin
+}
+
+@media screen and (min-width: 640px){
+  @include mixCreateColumns(12, "m"); // mixin
+}
+
+@media screen and (min-width: 960px){
+  @include mixCreateColumns(12, "l"); // mixin
 }
